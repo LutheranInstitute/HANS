@@ -28,6 +28,7 @@ h2{margin:.2em 0;font-size:clamp(24px,5cqw,40px);line-height:1.05;color:var(--in
 .go{background:var(--g);color:#02140a}.go:focus-visible,.cal:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
 .cal{border:1px solid var(--g);color:var(--g2)}
 .id{font-size:13px;opacity:.8;margin-top:10px}
+.teo{--card:#0b2545;border-color:#5b9bff55;box-shadow:0 0 40px #5b9bff18}.teo .k{color:#8fbaff}
 footer{max-width:720px;font-size:12px;opacity:.55;text-align:center}
 footer a{color:var(--g)}
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
@@ -50,12 +51,27 @@ footer a{color:var(--g)}
   </div>
 </div></section>
 
+<section class="w teo" id="salmos" aria-labelledby="t2"><div class="in" style="display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center;grid-column:1/-1">
+  <hans-face id="hf2" label="off" mood="love"></hans-face>
+  <div>
+    <div class="k">ESCUELA DE TEOLOGÍA · CLASE</div>
+    <h2 id="t2">Los Salmos y el manejo de las emociones</h2>
+    <div class="when">Salmo 107:1-43 · Decepción</div>
+    <div class="when">Clase por el Dr. Moisés Pérez</div>
+    <div class="mine">Lunes 19 de octubre · 6:00 pm MX y Centroamérica · 7:00 pm Texas · 7:00 pm Colombia y Perú</div>
+    <div class="mine" id="mine2"></div>
+    <div class="cd" id="cd2" aria-live="polite"></div>
+    <div class="id">Transmisión en Zoom y Facebook Live</div>
+  </div>
+</div></section>
+
 <footer>HANS · robotface de #OSW ante la IOA · en honor a Hans Nielsen Hauge · read-only DEMO · Human stays root · <a href="tamanos.html">tamaños</a> · <a href="./">cara completa</a></footer>
 
 <script src="hans-face.js"></script>
 <script>
 const q=new URLSearchParams(location.search);
 if(q.has("embed"))document.body.classList.add("embed");
+if(q.get("w"))document.querySelectorAll("section.w").forEach(s=>{if(s.id!==q.get("w"))s.remove()});
 const TZ="America/Chicago", FIRST=Date.UTC(2026,9,21,0,0); // Tue 2026-10-20 19:00 CDT
 function offsetMin(d){const p=Object.fromEntries(new Intl.DateTimeFormat("en-US",{timeZone:TZ,hourCycle:"h23",year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit"}).formatToParts(d).map(x=>[x.type,x.value]));
   return (Date.UTC(+p.year,p.month-1,+p.day,+p.hour,+p.minute)-d.getTime())/6e4;}
@@ -77,7 +93,18 @@ function tick(){const now=Date.now(),t=next(now);if(!t)return;
   cd.innerHTML=[[D,"DÍAS"],[H,"HRS"],[M,"MIN"],[S,"SEG"]].map(([v,l])=>`<div><b>${String(v).padStart(2,"0")}</b><span>${l}</span></div>`).join("");
   hf.mood=s<3600?"surprise":s<86400?"happy":"ready";
 }
-tick();setInterval(tick,1000);
-document.getElementById("join").addEventListener("pointerenter",()=>hf.say("¡te espero!"));
-setTimeout(()=>hf.say("hola, soy HANS"),600);
+// filtro ?w=invite | ?w=salmos
+// clase única de teología: lun 19 oct 2026, 19:00 Texas (00:00 UTC del 20)
+(function(){const hf2=document.getElementById("hf2");if(!hf2)return;const T=Date.UTC(2026,9,20,0,0),END=T+90*6e4,
+ cd2=document.getElementById("cd2"),m2=document.getElementById("mine2");
+ m2.textContent="En tu hora: "+new Intl.DateTimeFormat("es-MX",{weekday:"long",day:"numeric",month:"long",hour:"numeric",minute:"2-digit"}).format(new Date(T));
+ function t2(){const now=Date.now(),s=Math.floor((T-now)/1000);
+  if(now>=END){cd2.innerHTML='<span class="live">Clase concluida · gracias por acompañarnos</span>';hf2.mood="sleep";return;}
+  if(s<=0){cd2.innerHTML='<span class="live">● EN VIVO AHORA</span>';hf2.mood="surprise";return;}
+  const D=Math.floor(s/86400),H=Math.floor(s%86400/3600),M=Math.floor(s%3600/60),S=s%60;
+  cd2.innerHTML=[[D,"DÍAS"],[H,"HRS"],[M,"MIN"],[S,"SEG"]].map(([v,l])=>`<div><b>${String(v).padStart(2,"0")}</b><span>${l}</span></div>`).join("");}
+ t2();setInterval(t2,1000);})();
+if(document.getElementById("hf")){tick();setInterval(tick,1000);}
+if(hf){document.getElementById("join").addEventListener("pointerenter",()=>hf.say("¡te espero!"));setTimeout(()=>hf.say("hola, soy HANS"),600);}
+const h2=document.getElementById("hf2");if(h2)setTimeout(()=>h2.say("paz a ti"),900);
 </script></body></html>
