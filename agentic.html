@@ -1,0 +1,83 @@
+<!doctype html><html lang="es-MX"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex"><title>HANS · agentic widgets</title><link rel="icon" href="favicon.svg">
+<meta property="og:title" content="NIVELACIÓN_AGÉNTICA · martes 7 pm (Central)"><meta property="og:description" content="Yæl te invita. Clase semanal en Zoom. HANS te recibe.">
+<style>
+:root{--g:#22ff4a;--g2:#9fffb1;--ink:#eaffee;--bg:#020a04;--card:#04140a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--g2);font:16px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;padding:24px;display:flex;flex-direction:column;align-items:center;gap:22px}
+body.embed{padding:0;background:transparent}
+body.embed header,body.embed footer{display:none}
+header{max-width:720px;width:100%}
+h1{font-size:14px;letter-spacing:.24em;color:var(--g);margin:0}
+header p{margin:4px 0 0;opacity:.7;font-size:13px}
+.w{container-type:inline-size;width:min(720px,100%);background:var(--card);border:1px solid #22ff4a44;border-radius:22px;padding:22px;
+  display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center;box-shadow:0 0 40px #22ff4a14}
+@container (max-width:520px){.in{grid-template-columns:1fr!important;text-align:center}.in hans-face{margin:0 auto}.cta{justify-content:center}}
+.in{display:contents}
+hans-face{width:180px;height:180px}
+.k{font-size:12px;letter-spacing:.22em;color:var(--g)}
+h2{margin:.2em 0;font-size:clamp(24px,5cqw,40px);line-height:1.05;color:var(--ink);letter-spacing:.02em;word-break:break-word}
+.when{margin:.3em 0;color:var(--ink)}
+.mine{font-size:13px;opacity:.75}
+.cd{display:flex;gap:10px;margin:.6em 0;flex-wrap:wrap}
+.cd div{background:#06240b;border:1px solid #22ff4a33;border-radius:12px;padding:6px 10px;min-width:62px;text-align:center}
+.cd b{display:block;font-size:22px;color:var(--ink)}.cd span{font-size:11px;letter-spacing:.14em;opacity:.7}
+.live{color:var(--g);font-weight:700}
+.cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+.cta a{min-height:44px;display:inline-flex;align-items:center;padding:0 18px;border-radius:12px;text-decoration:none;font-weight:700;letter-spacing:.06em}
+.go{background:var(--g);color:#02140a}.go:focus-visible,.cal:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.cal{border:1px solid var(--g);color:var(--g2)}
+.id{font-size:13px;opacity:.8;margin-top:10px}
+footer{max-width:720px;font-size:12px;opacity:.55;text-align:center}
+footer a{color:var(--g)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+</style></head><body>
+<header><h1>&gt;_æ: AGENTIC WIDGETS</h1><p>Widgets que HANS sostiene. Incrusta cualquiera con <code>agentic.html?w=invite&amp;embed</code>.</p></header>
+
+<section class="w" id="invite" aria-labelledby="t1"><div class="in" style="display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center;grid-column:1/-1">
+  <hans-face id="hf" label="off" mood="happy"></hans-face>
+  <div>
+    <div class="k">YÆL TE INVITA</div>
+    <h2 id="t1">NIVELACIÓN_AGÉNTICA</h2>
+    <div class="when">Cada martes · 7:00 pm Central (Texas) · Zoom</div>
+    <div class="mine" id="mine"></div>
+    <div class="cd" id="cd" aria-live="polite"></div>
+    <div class="cta">
+      <a class="go" id="join" href="https://us06web.zoom.us/j/84238821224?pwd=ICOkQvwvxXTb6o9RRYam380RIbokkP.1" target="_blank" rel="noopener">&gt;_ Entrar a la clase</a>
+      <a class="cal" href="https://us06web.zoom.us/meeting/tZAvdOGgrDooGNDKb5vBRKBcZ-3LCrtvNcv5/ics?icsToken=DIr4CYutWA59LcxSNgAALAAAAKrWal2SGM7e1vxO5CtpZpqYStMlCSLC4o0UWvfSQ7xcs-hxF7ylEE6iBq9ZhiaDrWy2ArdZit0J-4RIMjAwMDAwMg&amp;meetingMasterEventId=bheP7TmJTnyIszvh0NDt3Q">📅 Agregar al calendario</a>
+    </div>
+    <div class="id">ID de reunión: 842 3882 1224 · Código: 437641</div>
+  </div>
+</div></section>
+
+<footer>HANS · robotface de #OSW ante la IOA · en honor a Hans Nielsen Hauge · read-only DEMO · Human stays root · <a href="tamanos.html">tamaños</a> · <a href="./">cara completa</a></footer>
+
+<script src="hans-face.js"></script>
+<script>
+const q=new URLSearchParams(location.search);
+if(q.has("embed"))document.body.classList.add("embed");
+const TZ="America/Chicago", FIRST=Date.UTC(2026,9,21,0,0); // Tue 2026-10-20 19:00 CDT
+function offsetMin(d){const p=Object.fromEntries(new Intl.DateTimeFormat("en-US",{timeZone:TZ,hourCycle:"h23",year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit"}).formatToParts(d).map(x=>[x.type,x.value]));
+  return (Date.UTC(+p.year,p.month-1,+p.day,+p.hour,+p.minute)-d.getTime())/6e4;}
+function chicago(y,m,d,h){let t=Date.UTC(y,m,d,h);t-=offsetMin(new Date(t))*6e4;return t;}
+function next(now){ // next Tuesday 19:00 Chicago whose 90-min window hasn't ended
+  const p=Object.fromEntries(new Intl.DateTimeFormat("en-US",{timeZone:TZ,year:"numeric",month:"2-digit",day:"2-digit"}).formatToParts(new Date(now)).map(x=>[x.type,x.value]));
+  for(let i=-1;i<9;i++){const base=new Date(Date.UTC(+p.year,p.month-1,+p.day+i));if(base.getUTCDay()!==2)continue;
+    const t=chicago(base.getUTCFullYear(),base.getUTCMonth(),base.getUTCDate(),19);if(t>=FIRST&&now<t+90*6e4)return t;}
+}
+const hf=document.getElementById("hf"),cd=document.getElementById("cd"),mine=document.getElementById("mine");
+let shown=0;
+function tick(){const now=Date.now(),t=next(now);if(!t)return;
+  if(t!==shown){shown=t;const loc=Intl.DateTimeFormat().resolvedOptions().timeZone;
+    const f=new Intl.DateTimeFormat("es-MX",{weekday:"long",day:"numeric",month:"long",hour:"numeric",minute:"2-digit"}).format(new Date(t));
+    mine.textContent="Próxima clase en tu hora: "+f+(loc!==TZ?" ("+loc+")":"");}
+  const s=Math.floor((t-now)/1000);
+  if(s<=0){cd.innerHTML='<span class="live">● EN VIVO AHORA</span>';hf.mood="surprise";return;}
+  const D=Math.floor(s/86400),H=Math.floor(s%86400/3600),M=Math.floor(s%3600/60),S=s%60;
+  cd.innerHTML=[[D,"DÍAS"],[H,"HRS"],[M,"MIN"],[S,"SEG"]].map(([v,l])=>`<div><b>${String(v).padStart(2,"0")}</b><span>${l}</span></div>`).join("");
+  hf.mood=s<3600?"surprise":s<86400?"happy":"ready";
+}
+tick();setInterval(tick,1000);
+document.getElementById("join").addEventListener("pointerenter",()=>hf.say("¡te espero!"));
+setTimeout(()=>hf.say("hola, soy HANS"),600);
+</script></body></html>
