@@ -1,0 +1,36 @@
+<!doctype html><html lang="es-MX"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex"><title>HANS · cualquier tamaño</title><link rel="icon" href="favicon.svg">
+<style>
+body{margin:0;background:#020a04;color:#9fffb1;font:15px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;padding:24px}
+h1{font-size:22px;letter-spacing:.18em;color:#22ff4a;margin:0 0 4px}p{margin:0 0 20px;opacity:.8;max-width:60ch}
+.row{display:flex;flex-wrap:wrap;gap:22px;align-items:flex-end;margin-bottom:28px}
+figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:8px}
+figcaption{font-size:12px;opacity:.7}
+hans-face{border:1px solid #0e5a1d33}
+.p{width:min(300px,80vw);aspect-ratio:9/16}.l{width:min(640px,90vw);aspect-ratio:16/9}
+.moods button{min-height:44px;min-width:44px;margin:0 6px 6px 0;background:#06240b;color:#9fffb1;border:1px solid #22ff4a66;border-radius:10px;font:inherit;padding:0 14px}
+footer{opacity:.6;font-size:12px;margin-top:20px}
+a{color:#22ff4a}
+</style></head><body>
+<h1>HANS · ANY SIZE</h1>
+<p>Una sola cara. Debajo de 40 px se pliega en la ligadura æ: la a y la e son sus ojos. Robotface de #OSW ante la IOA, en honor a Hans Nielsen Hauge.</p>
+<div class="row">
+  <figure><hans-face style="width:16px;height:16px"></hans-face><figcaption>16 · æ</figcaption></figure>
+  <figure><hans-face style="width:32px;height:32px"></hans-face><figcaption>32 · æ</figcaption></figure>
+  <figure><hans-face style="width:64px;height:64px"></hans-face><figcaption>64 · avatar</figcaption></figure>
+  <figure><hans-face style="width:128px;height:128px" mood="happy"></hans-face><figcaption>128 · avatar</figcaption></figure>
+  <figure><hans-face style="width:220px;height:220px" id="big"></hans-face><figcaption>220 · full</figcaption></figure>
+</div>
+<div class="moods" role="group" aria-label="mood"></div>
+<div class="row">
+  <figure><hans-face class="p" id="p"></hans-face><figcaption>9:16 · teléfono</figcaption></figure>
+  <figure><hans-face class="l" id="l"></hans-face><figcaption>16:9 · pantalla de clase</figcaption></figure>
+</div>
+<p><a href="clase.html">&gt;_ clase.html</a> · recepción del Diplomado · <a href="./">cara completa</a></p>
+<footer>Read-only DEMO · la cara muestra, no mueve ningún robot · Human stays root · Evidence ≠ Authority · nombre de desarrollo: Enzo</footer>
+<script src="hans-face.js"></script>
+<script>
+const box=document.querySelector(".moods");
+["ready","happy","think","surprise","sleep","love"].forEach(m=>{const b=document.createElement("button");b.textContent=m;
+b.onclick=()=>{["big","p","l"].forEach(id=>{const f=document.getElementById(id);f.mood=m;f.say(m==="sleep"?"zzz":"hola, soy HANS")})};box.appendChild(b)});
+</script></body></html>
