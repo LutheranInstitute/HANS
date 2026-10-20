@@ -42,19 +42,19 @@ footer a{color:var(--g)}
   <div>
     <div class="k">AGENDA DEL DÍA · MARTES 20 OCT 2026</div>
     <h2 id="t3">Asamblea General LALM · LALS · LALI</h2>
-    <div class="when">Latin American Lutheran Mission +1936 · Reunión Anual · 9:30 am Central (Texas) · Zoom</div>
+    <div class="when">Latin American Lutheran Mission +1936 · Reunión Anual · 8:30 am Central (Texas) · 7:30 am Guatemala · Zoom</div>
     <div class="mine" id="mine3"></div>
     <div class="cd" id="cd3" aria-live="polite"></div>
     <ol class="od">
-      <li>9:30 Apertura, devocional y quórum</li>
-      <li>9:38 Agenda y acta 2025</li>
-      <li>9:45 Nueve informes regionales · 2 min</li>
-      <li>10:03 Informes: Secretaría · Tesorería · Dirección</li>
-      <li>10:07 Seguimiento de acuerdos 2025</li>
-      <li>10:10 Prioridades 2027</li>
-      <li class="el"><b>10:12 Continuidad de la Junta Directiva y moción de consejeras</b></li>
-      <li>10:22 Archivo y otros asuntos</li>
-      <li>10:25 Oración y clausura</li>
+      <li>8:30 Apertura, devocional y quórum</li>
+      <li>8:38 Agenda y acta 2025</li>
+      <li>8:45 Nueve informes regionales · 2 min</li>
+      <li>9:03 Informes: Secretaría · Tesorería · Dirección</li>
+      <li>9:07 Seguimiento de acuerdos 2025</li>
+      <li>9:10 Prioridades 2027</li>
+      <li class="el"><b>9:12 Continuidad de la Junta Directiva y moción de consejeras</b></li>
+      <li>9:22 Archivo y otros asuntos</li>
+      <li>9:25 Oración y clausura</li>
     </ol>
     <div class="cta">
       <a class="go" href="https://us06web.zoom.us/j/89797243388?pwd=0HUQEwhaJk0kWK9aaWwaDeQppoPghX.1" target="_blank" rel="noopener">&gt;_ Entrar a la Asamblea</a>
@@ -134,8 +134,8 @@ function tick(){const now=Date.now(),t=next(now);if(!t)return;
   const D=Math.floor(s/86400),H=Math.floor(s%86400/3600),M=Math.floor(s%3600/60),S=s%60;
   cd2.innerHTML=[[D,"DÍAS"],[H,"HRS"],[M,"MIN"],[S,"SEG"]].map(([v,l])=>`<div><b>${String(v).padStart(2,"0")}</b><span>${l}</span></div>`).join("");}
  t2();setInterval(t2,1000);})();
-// Asamblea: mar 20 oct 2026 9:30 Central (14:30 UTC)
-(function(){const hf3=document.getElementById("hf3");if(!hf3)return;const T=Date.UTC(2026,9,20,14,30),END=T+60*6e4,
+// Asamblea: mar 20 oct 2026 8:30 Central (13:30 UTC)
+(function(){const hf3=document.getElementById("hf3");if(!hf3)return;const T=Date.UTC(2026,9,20,13,30),END=T+60*6e4,
  cd3=document.getElementById("cd3"),m3=document.getElementById("mine3");
  m3.textContent="En tu hora: "+new Intl.DateTimeFormat("es-MX",{weekday:"long",day:"numeric",month:"long",hour:"numeric",minute:"2-digit"}).format(new Date(T));
  function t3(){const now=Date.now(),s=Math.floor((T-now)/1000);
