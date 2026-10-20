@@ -29,11 +29,41 @@ h2{margin:.2em 0;font-size:clamp(24px,5cqw,40px);line-height:1.05;color:var(--in
 .cal{border:1px solid var(--g);color:var(--g2)}
 .id{font-size:13px;opacity:.8;margin-top:10px}
 .teo{--card:#0b2545;border-color:#5b9bff55;box-shadow:0 0 40px #5b9bff18}.teo .k{color:#8fbaff}
+.asm{--card:#1a120c;border-color:#d4af3766;box-shadow:0 0 40px #d4af3718}.asm .k{color:#d4af37}
+.od{margin:.6em 0;padding-left:1.4em;font-size:14px;color:var(--ink)}.od li{margin:2px 0}.od .el{color:#d4af37}
 footer{max-width:720px;font-size:12px;opacity:.55;text-align:center}
 footer a{color:var(--g)}
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
 </style></head><body>
 <header><h1>&gt;_æ: AGENTIC WIDGETS</h1><p>Widgets que HANS sostiene. Incrusta cualquiera con <code>agentic.html?w=invite&amp;embed</code>.</p></header>
+
+<section class="w asm" id="asamblea" aria-labelledby="t3"><div class="in" style="display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center;grid-column:1/-1">
+  <hans-face id="hf3" label="off" mood="ready"></hans-face>
+  <div>
+    <div class="k">AGENDA DEL DÍA · MARTES 20 OCT 2026</div>
+    <h2 id="t3">Asamblea General LALM · LALS · LALI</h2>
+    <div class="when">Latin American Lutheran Mission +1936 · Reunión Anual · 9:30 am Central (Texas) · Zoom</div>
+    <div class="mine" id="mine3"></div>
+    <div class="cd" id="cd3" aria-live="polite"></div>
+    <ol class="od">
+      <li>Devocional de apertura</li>
+      <li>Lectura del acta de la reunión anterior</li>
+      <li>Informes anuales: Secretaría · Tesorería · Dirección</li>
+      <li>Asuntos pendientes</li>
+      <li>Asuntos nuevos</li>
+      <li class="el"><b>🗳️ Elección de nuevos miembros de la Junta Directiva</b></li>
+      <li>Otros asuntos de la Reunión Anual</li>
+      <li>Tiempo de oración</li>
+      <li>Clausura</li>
+    </ol>
+    <div class="cta">
+      <a class="go" href="https://us06web.zoom.us/j/89797243388?pwd=0HUQEwhaJk0kWK9aaWwaDeQppoPghX.1" target="_blank" rel="noopener">&gt;_ Entrar a la Asamblea</a>
+      <a class="cal" href="https://lutheraninstitute.github.io/annual-meeting/">Página de la Asamblea</a>
+    </div>
+    <div class="id">ID de reunión: 897 9724 3388 · Código: 807997 · Quórum: 15 miembros (Estatutos, Art. XII)</div>
+    <div class="mine" style="margin-top:8px">Esa noche · 7:00 pm Central · NIVELACIÓN_AGÉNTICA</div>
+  </div>
+</div></section>
 
 <section class="w" id="invite" aria-labelledby="t1"><div class="in" style="display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center;grid-column:1/-1">
   <hans-face id="hf" label="off" mood="happy"></hans-face>
@@ -104,6 +134,17 @@ function tick(){const now=Date.now(),t=next(now);if(!t)return;
   const D=Math.floor(s/86400),H=Math.floor(s%86400/3600),M=Math.floor(s%3600/60),S=s%60;
   cd2.innerHTML=[[D,"DÍAS"],[H,"HRS"],[M,"MIN"],[S,"SEG"]].map(([v,l])=>`<div><b>${String(v).padStart(2,"0")}</b><span>${l}</span></div>`).join("");}
  t2();setInterval(t2,1000);})();
+// Asamblea: mar 20 oct 2026 9:30 Central (14:30 UTC)
+(function(){const hf3=document.getElementById("hf3");if(!hf3)return;const T=Date.UTC(2026,9,20,14,30),END=T+60*6e4,
+ cd3=document.getElementById("cd3"),m3=document.getElementById("mine3");
+ m3.textContent="En tu hora: "+new Intl.DateTimeFormat("es-MX",{weekday:"long",day:"numeric",month:"long",hour:"numeric",minute:"2-digit"}).format(new Date(T));
+ function t3(){const now=Date.now(),s=Math.floor((T-now)/1000);
+  if(now>=END){cd3.innerHTML='<span class="live">Asamblea concluida · gracias</span>';hf3.mood="sleep";return;}
+  if(s<=0){cd3.innerHTML='<span class="live">● EN VIVO AHORA</span>';hf3.mood="surprise";return;}
+  const D=Math.floor(s/86400),H=Math.floor(s%86400/3600),M=Math.floor(s%3600/60),S=s%60;
+  cd3.innerHTML=[[D,"DÍAS"],[H,"HRS"],[M,"MIN"],[S,"SEG"]].map(([v,l])=>`<div><b>${String(v).padStart(2,"0")}</b><span>${l}</span></div>`).join("");
+  hf3.mood=s<3600?"happy":"ready";}
+ t3();setInterval(t3,1000);})();
 if(document.getElementById("hf")){tick();setInterval(tick,1000);}
 if(hf){document.getElementById("join").addEventListener("pointerenter",()=>hf.say("¡te espero!"));setTimeout(()=>hf.say("hola, soy HANS"),600);}
 const h2=document.getElementById("hf2");if(h2)setTimeout(()=>h2.say("paz a ti"),900);
