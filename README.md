@@ -22,6 +22,19 @@ Una sola cara que escala: `hans-face.js` (sin dependencias).
 - Moods: `ready` · `happy` · `think` · `surprise` · `sleep` · `love`. API: `el.mood = "happy"`, `el.say("hola")`.
 - Demo de tamaños: `tamanos.html` · Primer trabajo, recepción del Diplomado en Transformación Digital (martes 7 pm Texas): `clase.html`.
 
+## Por qué Hauge · lectura recomendada
+
+**Ola Honningdal Grytten (NHH, 2020). _Puritan Motivation for Serial Entrepreneurship: The Haugean Example_.** NHH Dept. of Economics Discussion Paper 12/2020, 15 págs., acceso abierto: https://hdl.handle.net/11250/2671388
+
+Resumen (en nuestras palabras, a partir del resumen y la introducción del autor):
+
+- Hans Nielsen Hauge (1771–1824), hijo de campesinos de Rolvsøy (Østfold) y predicador laico, fue un **emprendedor en serie**: industria, comercio, transporte marítimo, finanzas e inversiones, pero también **educación, reformas políticas y obra social**. Grytten afirma que es difícil encontrar a alguien con un papel tan importante en la formación de la Noruega moderna.
+- Su emprendimiento se modela como la suma de cinco frentes: religioso + industrial + político + educativo + de bienestar (EH = RE + IE + PE + EE + WE). Lo industrial combina capital, trabajo, finanzas, tecnología y mercados, todo multiplicado por un **factor de motivación**.
+- Las fuentes son cartas comerciales y cuentas de puño y letra de Hauge, muchas usadas en el juicio en su contra, donde fue absuelto en lo referente a su actividad empresarial.
+- Conclusión: Hauge y su red estuvieron fuertemente comprometidos con el emprendimiento en serie, dentro y fuera de los negocios, y **su motivación fue claramente religiosa**: la vocación vivida como trabajo, con las ganancias reinvertidas en lugar de consumidas.
+
+Por qué importa para HANS: un laico sin título que fundaba negocios, escuelas y obra social a la vez es el modelo de #OSW, donde todos somos desarrolladores y la persona es la raíz. HANS lleva su nombre por eso.
+
 Nombre de desarrollo: Enzo (ENZO_HARK), por Lorænzzo Méndez, un Cane Corso gris.
 
 Read-only · DEMO · la cara muestra, no mueve ningún robot. Human stays root · Evidence ≠ Authority.
